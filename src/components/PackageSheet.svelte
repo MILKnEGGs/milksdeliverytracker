@@ -42,7 +42,7 @@
       </div>
     </div>
 
-    <div class="seg">
+    <div class="seg status">
       <button class:on={status === 'waiting'} onclick={() => setStatus('waiting')}>📭 Not shipped</button>
       <button class:on={status === 'shipped'} onclick={() => setStatus('shipped')}>🚚 Shipped</button>
       <button class:on={status === 'delivered'} onclick={() => setStatus('delivered')}>📬 Arrived</button>
@@ -93,6 +93,15 @@
 </Sheet>
 
 <style>
+  .status {
+    flex-wrap: nowrap;
+  }
+  .status button {
+    flex: 1;
+    padding: 4px 6px;
+    font-size: 0.92rem;
+    white-space: nowrap;
+  }
   .dates {
     display: grid;
     grid-template-columns: 1fr 1fr;

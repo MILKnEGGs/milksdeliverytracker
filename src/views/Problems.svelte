@@ -54,11 +54,11 @@
     {#each r.bySeller as g (g.pkg.id)}
       <section class="card stack">
         <div>
-          <h3>{g.pkg.seller}</h3>
-          <div class="row">
-            <span class="muted small">Order {g.pkg.orderNumber} · {money(g.pkg.total)}{g.pkg.deliveredOn ? ` · arrived ${shortDate(g.pkg.deliveredOn)}` : ''}</span>
-            <button class="btn small ghost" onclick={() => copyNumber(g.pkg)}>Copy #</button>
+          <div class="row" style="flex-wrap:nowrap">
+            <h3 class="spacer">{g.pkg.seller}</h3>
+            <button class="btn small" onclick={() => copyNumber(g.pkg)}>Copy order #</button>
           </div>
+          <span class="muted small">Order {g.pkg.orderNumber} · {money(g.pkg.total)}{g.pkg.deliveredOn ? ` · arrived ${shortDate(g.pkg.deliveredOn)}` : ''}</span>
         </div>
         <ul class="rows inset">
           {#each g.cards as c (c.id)}
